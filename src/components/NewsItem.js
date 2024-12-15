@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {format} from "date-fns";
 
 export class NewsItem extends Component {
 
@@ -15,7 +16,7 @@ export class NewsItem extends Component {
                     <div className="card-body">
                         <h5 className="card-title">{title}...</h5>
                         <p className="card-text">{description}</p>
-                        <p className="card-text"><small className="text-muted">by {author} on {date}</small></p>
+                        <p className="card-text"><small className="text-muted">by {author} on {format(new Date(date), 'dd MMM yyyy')}</small></p>
                         <a href={newsUrl} className="btn btn-sm btn-dark">Read More</a>
                     </div>
                 </div>
